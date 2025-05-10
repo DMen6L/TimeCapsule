@@ -46,3 +46,4 @@
 /home/dimash/round2/backend/obj/Debug/net8.0/backend.csproj.AssemblyReference.cache
 /home/dimash/round2/backend/obj/Debug/net8.0/backend.csproj.Up2Date
 /home/dimash/round2/backend/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/home/dimash/round2/backend/obj/Debug/net8.0/backend.sourcelink.json

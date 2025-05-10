@@ -45,6 +45,31 @@ function Login() {
     }
     
     if(hasError) return;
+
+    try {
+      const response = await fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, password })
+      })
+
+      const data = await response.json()
+      console.log("Response from backend: ", data)
+  
+      if(response.ok) {
+        localStorage.setItem("userEmail", email)
+        localStorage.setItem("userPassword", password)
+        localStorage.setItem("userId", data.id)
+        navigate("/time-capsule")
+      } else {
+        alert(data || "Registration failed")
+      }
+    } catch(error) {
+      console.error(error)
+      alert("Network Error")
+    }
   }
 
 return (

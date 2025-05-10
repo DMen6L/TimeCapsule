@@ -1,7 +1,9 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Registration from './Registration-Login/Registration.tsx'
 import Login from "./Registration-Login/Login.tsx";
 import VerifyEmailNotice from "./Registration-Login/VerifyEmailNotice.tsx";
+import Main from './TimeCapsule/Main.tsx'
+import Dashboard from "./TimeCapsule/Dashboard.tsx";
 
 function App() {
   return (
@@ -12,7 +14,8 @@ function App() {
             <Route path="/register" element={<Registration />} />
             <Route path="/verify-email" element={<VerifyEmailNotice />} />
             <Route path="/login" element={<Login />} />
-            <Route path="*" element={<Navigate to="/register" />} />
+            <Route path="/time-capsule" element={<Dashboard />} />
+            <Route path="*" element={<Main />} />
           </Routes>
         </div>
       </div>

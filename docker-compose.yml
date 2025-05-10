@@ -21,6 +21,23 @@ services:
       - "5050:80"
     volumes:
       - pgadmin_data:/var/lib/pgadmin
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - postgres
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
 
 volumes:
   pg_data: 

@@ -1,5 +1,14 @@
-CREATE TABLE Users (
-    Id SERIAL PRIMARY KEY,
-    Email VARCHAR(50) UNIQUE,
-    Password VARCHAR(50)
-)
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) UNIQUE,
+    password VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS capsules (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    title VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    delivery_date DATE NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW()
+);

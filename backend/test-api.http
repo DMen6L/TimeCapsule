@@ -1,7 +1,7 @@
-POST http://localhost:5000/register
+POST http://localhost:5000/load-capsules
 Content-Type: application/json
 
 {
-  "email": "test@example.com",
-  "password": "Secure123"
+  "email": "user@example.com",
+  "password": "Secure_123"
 }

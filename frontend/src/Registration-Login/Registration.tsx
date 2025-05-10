@@ -59,7 +59,10 @@ function Registration() {
       console.log("Response from backend: ", data)
   
       if(response.ok) {
-        navigate("/verify-email")
+        localStorage.setItem("userEmail", email)
+        localStorage.setItem("userPassword", password)
+        localStorage.setItem("userId", data.id)
+        navigate("/time-capsule")
       } else {
         alert(data || "Registration failed")
       }
